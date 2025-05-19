@@ -1,2 +1,2 @@
-// Aucune logique nécessaire : simple témoin de chargement
-console.log("script.js chargé – animation 100 % CSS");
+// Pas de logique nécessaire pour cette démo.
+console.log("Page Siders chargée.");
