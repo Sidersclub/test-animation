@@ -1,4 +1,2 @@
-/* Aucune logique JS nécessaire pour l’animation.
-   Le fichier est laissé ici « vide » pour respecter la structure
-   trois-fichiers demandée et faciliter d’éventuels ajouts. */
-console.log("Animation soleil : fichier script.js chargé (aucune action JS nécessaire).");
+// Aucune logique nécessaire : simple témoin de chargement
+console.log("script.js chargé – animation 100 % CSS");
