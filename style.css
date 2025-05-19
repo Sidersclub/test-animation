@@ -1,70 +1,54 @@
-/* -------- Variables couleur -------- */
+/* ---------- couleurs ---------- */
 :root{
-  --accent: #DEBA52;          /* Jaune moutarde */
-  --bg:     #000000;          /* Fond noir */
-  --fg:     #F5F5F5;          /* Texte principal */
+  --accent:#DEBA52;   /* Jaune moutarde */
+  --bg:#000;          /* Fond noir      */
+  --fg:#F5F5F5;       /* Texte blanc    */
 }
 
-/* -------- Base -------- */
+/* ---------- base ---------- */
 *{box-sizing:border-box;margin:0;padding:0}
 body{
   background:var(--bg);
   color:var(--fg);
-  font-family:"Poppins",sans-serif;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  min-height:100vh;
-  gap:20px;
+  font-family:sans-serif;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  min-height:100vh;gap:24px;
 }
+h1{font-size:1.2rem}
 
-/* -------- Animation soleil -------- */
-.sun-container{
-  width:120px;
-  height:120px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
+/* ---------- animation soleil ---------- */
+.sun-container{width:120px;height:120px;display:flex;justify-content:center;align-items:center}
 
 .sun-wrapper{
-  position:relative;
-  width:100px;
-  height:100px;
-  /* Le cycle complet dure 30 s et boucle */
+  position:relative;width:100px;height:100px;
   animation:sunMove 30s linear infinite;
-  opacity:0;                       /* commence invisible */
-  transform:translateY(40px);      /* démarre en bas */
-  animation-fill-mode:forwards;    /* garde l’état final de chaque frame */
+  opacity:0;                         /* début invisible */
+  transform:translateY(40px);        /* part du bas */
+  animation-fill-mode:forwards;
 }
 
 .sun-core{
-  position:absolute;
-  top:50%; left:50%;
-  width:40px; height:40px;
-  margin:-20px;
+  position:absolute;top:50%;left:50%;
+  width:40px;height:40px;margin:-20px;
   border-radius:50%;
   background:transparent;
-  border:4px solid #ffffff;        /* contour blanc */
+  border:4px solid #fff;
   animation:sunFill 30s linear infinite;
 }
 
 .sun-ray{
-  position:absolute;
-  top:50%; left:50%;
-  width:14px; height:40px;
-  margin:-20px 0 0 -7px;
+  position:absolute;top:50%;left:50%;
+  width:14px;height:40px;margin:-20px 0 0 -7px;
   border-radius:50% 50% 0 0;
   background:transparent;
-  border:4px solid #ffffff;
-  border-bottom:none;              /* bout ouvert */
+  border:4px solid #fff;border-bottom:none;
   transform-origin:50% 100%;
-  transform:rotate(calc(var(--i)*30deg)) translateY(-45px);
+  transform:rotate(calc(var(--i) * 30deg)) translateY(-45px);
   animation:sunFill 30s linear infinite;
 }
 
-/* Trajectoire + rotation (lever → zénith → coucher) */
+/* trajectoire + rotation */
 @keyframes sunMove{
   0%   {transform:translateY(40px) rotate(0deg);   opacity:0;}
   10%  {opacity:1;}
@@ -75,9 +59,9 @@ body{
   100% {transform:translateY(40px) rotate(360deg); opacity:0;}
 }
 
-/* Passage blanc → jaune → blanc */
+/* passage blanc → jaune → blanc */
 @keyframes sunFill{
-  0%,20%  {background:transparent; border-color:#ffffff;}
-  50%,80% {background:var(--accent); border-color:var(--accent);}
-  100%    {background:transparent; border-color:#ffffff;}
+  0%,20%  {background:transparent;border-color:#fff;}
+  50%,80% {background:var(--accent);border-color:var(--accent);}
+  100%    {background:transparent;border-color:#fff;}
 }
